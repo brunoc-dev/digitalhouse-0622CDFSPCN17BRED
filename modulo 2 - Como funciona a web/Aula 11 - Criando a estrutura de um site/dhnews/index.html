@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
 
   <title>Document</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Palanquin:wght@700&display=swap');
     body {
       margin: 0 auto;
       max-width: 500px;
-      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Fira Code', monospace;
       font-size: 16px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 500px;
     }
   </style>
 </head>
@@ -26,16 +29,32 @@
   </header>
 
   <main>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur,
-      arcu ut aliquet feugiat, lectus diam ornare justo, sed euismod felis nisl in
-      tortor. Quisque facilisis mi fermentum tristique aliquet. Nam porttitor magna
-      sit amet nisi rutrum posuere. Nam convallis odio et arcu elementum pulvinar.
-      Pellentesque consequat maximus leo, sit amet commodo lectus semper vel.
-      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-      cubilia curae; Vestibulum consectetur ac nisl ut aliquam. Sed ac lobortis nisi.
-      Donec placerat quis ante vel ultricies.
-    </p>
+    <section>
+      <header>
+        <h3>Notícia jornal</h3>
+      </header>
+
+      <article>
+        <table cellspacing="20px">
+          <tbody>
+            <tr>
+              <td style="text-align: justify; vertical-align: top;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur,
+                arcu ut aliquet feugiat, lectus diam ornare justo, sed euismod felis nisl in
+                tortor. Quisque facilisis mi fermentum tristique aliquet. Nam porttitor magna
+                sit amet nisi rutrum posuere. Nam convallis odio et arcu elementum pulvinar.
+              </td>
+              <td style="text-align: justify; vertical-align: top;">
+                Pellentesque consequat maximus leo, sit amet commodo lectus semper vel.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                cubilia curae; Vestibulum consectetur ac nisl ut aliquam. Sed ac lobortis nisi.
+                Donec placerat quis ante vel ultricies.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
 
     <img width="480" src="img/destaque.webp" alt="Imagem de um escritório">
 
