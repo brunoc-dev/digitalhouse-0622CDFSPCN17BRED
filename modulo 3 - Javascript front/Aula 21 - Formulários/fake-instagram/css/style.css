@@ -206,6 +206,12 @@ a{
     padding: 20px;
 }
 
+.error {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
 @media(max-width:560px){
   .busca{
     display: none;

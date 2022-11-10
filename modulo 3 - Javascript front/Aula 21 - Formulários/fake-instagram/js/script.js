@@ -24,3 +24,9 @@ formAuth.style.flexDirection = 'column'
 
 // 3. selecionando o body diretamente para alterar a cor de fundo.
 document.body.style.backgroundColor = '#fafafa'
+
+// 4. incluir novo campo no formulário
+const dateInput = document.createElement('input');
+dateInput.type = 'date'
+dateInput.placeholder = 'Data de Nascimento'
+formAuth.insertBefore(dateInput, primeiroNomeInput);
