@@ -109,4 +109,25 @@ window.addEventListener('load', function () {
       }
     });
   });
+
+  const cepInput = this.document.querySelector('#cep');
+  const logradouro = this.document.querySelector('#logradouro');
+  const localidade = this.document.querySelector('#localidade');
+  cepInput.addEventListener('change', () => {
+    // Conferir o valor do input
+    if (cepInput.value.length === 8) {
+      fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`, {
+        method: 'get',
+        mode: 'cors'
+      })
+        .then(response => response.json())
+        .then(endereco => {
+          // Pegar o logradouro e localidade e injetar nos campos rua e cidade.
+          logradouro.value = endereco.logradouro
+          localidade.value = endereco.localidade
+        })
+        .catch(error => console.log(error))
+    }
+    // Utilizar o fetch para fazer a requisição (método GET)
+  });
 });
