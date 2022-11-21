@@ -27,3 +27,6 @@ const addPost = function () {
 }
 
 verMaisBtn.onclick = addPost;
+
+const tagNomeUsuario = document.querySelector('.avatar-content b');
+tagNomeUsuario.innerText = localStorage.getItem('usuario');
