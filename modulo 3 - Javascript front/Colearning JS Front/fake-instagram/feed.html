@@ -7,6 +7,7 @@
   <link rel='stylesheet' href='css/style.css' />
 
   <script src="js/feed.js" defer></script>
+  <script src="js/modal.js" defer></script>
 </head>
 
 <body>
@@ -27,12 +28,13 @@
         <a href="/home">
           <img src="img/icons/home.svg">
         </a>
-        <a href="">
+
+        <button id="user-avatar-btn">
           <div class="avatar-content">
             <img class="avatar" src="img/avatar-example.png">
             <b>Nome do Usuário</b>
           </div>
-        </a>
+        </button>
       </nav>
     </div>
   </header>
@@ -68,6 +70,18 @@
     </div>
     <button id="more">Ver Mais</button>
   </main>
+
+  <div class="modal hidden">
+    <header>
+      <h3>Titulo do modal</h3>
+    </header>
+    <section>
+      conteúdo do modal
+    </section>
+    <footer>
+      <button id="close-modal-btn">Fechar</button>
+    </footer>
+  </div>
 </body>
 
 </html>
