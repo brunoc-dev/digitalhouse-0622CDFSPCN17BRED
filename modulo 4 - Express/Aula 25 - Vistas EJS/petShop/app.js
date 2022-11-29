@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
+//Adiciona a nova rota Servicos
 var servicosRouter = require('./src/routes/servicos');
 
 var app = express();
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//Adiciona a nova rota Servicos
 app.use('/servicos', servicosRouter);
 
 // catch 404 and forward to error handler
