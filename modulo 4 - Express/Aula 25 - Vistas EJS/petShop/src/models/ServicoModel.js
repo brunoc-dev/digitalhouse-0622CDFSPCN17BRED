@@ -11,7 +11,7 @@ module.exports = {
       {
         id: 2,
         nome: 'Tosa',
-        valor: 'R$ 15,00',
+        valor: 'R$ 20,00',
         descricao: 'Tosa completa',
         imagem: 'tosa'
       },
@@ -20,6 +20,13 @@ module.exports = {
         nome: 'Corte de unhas',
         valor: 'R$ 5,00',
         descricao: 'Corte de unhas, todas as patas',
+        imagem: 'corte-unha'
+      },
+      {
+        id: 4,
+        nome: 'Creche',
+        valor: 'R$ 50,00',
+        descricao: 'Cuidamos do seu pet',
         imagem: 'corte-unha'
       },
     ]
