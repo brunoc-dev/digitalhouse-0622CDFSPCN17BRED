@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem auto;
+        gap: 1rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+        box-shadow: 0.1rem 0.1rem 0.1rem;
+        background: ghostwhite;
+      }
+      h2 {
+        text-align: center;
+      }
+      button {
+        font-weight: bold;
+        margin-top: auto;
+        color: rgba(0, 0, 0, .8);
+      }
+
+    </style>
+    <main>
+
+      <!-- POST -->
+      <form method="post" action="/servicos/create">
+        <h2>CREATE</h2>
+        <input type="text" name="nome" placeholder="nome">
+        <textarea type="text" name="descricao" placeholder="descricao"></textarea>
+        <input type="text" name="valor" placeholder="valor">
+        <input type="text" name="imagem" placeholder="imagem">
+        <button>adicionar</button>
+      </form>
+
+      <!-- GET -->
+      <form method="get" action="/servicos/search">
+        <h2>READ</h2>
+        <input type="text" name="id" placeholder="id">
+        <button>pesquisar</button>
+      </form>
+
+      <!-- PUT -->
+      <form method="post" action="/servicos/edit">
+        <h2>UPDATE</h2>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="nome" placeholder="nome">
+        <textarea type="text" name="descricao" placeholder="descricao"></textarea>
+        <input type="text" name="valor" placeholder="valor">
+        <input type="text" name="imagem" placeholder="imagem">
+        <button>editar</button>
+      </form>
+
+      <!-- DELETE -->
+      <form method="post" action="/servicos/remove">
+        <h2>DELETE</h2>
+        <input type="text" name="id" placeholder="id">
+        <button>apagar</button>
+      </form>
+      
+    </main>
+
+<%- include('partials/footer') %> 

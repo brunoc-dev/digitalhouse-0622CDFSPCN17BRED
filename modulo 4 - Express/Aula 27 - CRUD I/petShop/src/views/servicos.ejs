@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+
+    <main>
+      <section class="servicos-lista">
+        <div class="container">
+          <h1>Serviços</h1>
+
+          <% for( const servico of listaServicos ) { %>
+              <article>
+                <div class="thumb">
+                  <img src="/images/servicos/<%=servico.imagem%>.jpg" />
+                </div>
+                <div class="info">
+                  <h3><%= servico.nome %></h3>
+                  <P><%= servico.valor %> </P>
+                  <p><%= servico.descricao %></p>
+                  <a href="#" class="btn btn-primary">agendar</a>
+                </div>
+              </article>
+            <% } %>
+      
+        </div>
+      </section>
+    </main>
+
+<%- include("partials/footer") %>
