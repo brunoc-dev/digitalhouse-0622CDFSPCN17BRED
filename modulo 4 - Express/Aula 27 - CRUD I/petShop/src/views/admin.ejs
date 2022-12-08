@@ -28,12 +28,12 @@
     <main>
 
       <!-- POST -->
-      <form method="post" action="/servicos/create">
+      <form method="post" action="/servicos/create" enctype="multipart/form-data">
         <h2>CREATE</h2>
         <input type="text" name="nome" placeholder="nome">
         <textarea type="text" name="descricao" placeholder="descricao"></textarea>
         <input type="text" name="valor" placeholder="valor">
-        <input type="text" name="imagem" placeholder="imagem">
+        <input type="file" name="imagem" placeholder="imagem">
         <button>adicionar</button>
       </form>
 
@@ -45,7 +45,7 @@
       </form>
 
       <!-- PUT -->
-      <form method="post" action="/servicos/edit">
+      <form method="post" action="/servicos/edit?_method=PUT">
         <h2>UPDATE</h2>
         <input type="text" name="id" placeholder="id">
         <input type="text" name="nome" placeholder="nome">
@@ -56,7 +56,7 @@
       </form>
 
       <!-- DELETE -->
-      <form method="post" action="/servicos/remove">
+      <form method="post" action="/servicos/remove?_method=DELETE">
         <h2>DELETE</h2>
         <input type="text" name="id" placeholder="id">
         <button>apagar</button>
