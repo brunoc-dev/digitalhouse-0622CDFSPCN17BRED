@@ -1,0 +1,27 @@
+<%- include('partials/header') %> 
+
+    <main>
+      <section class="servicos-lista">
+        <div class="container">
+          <h1>Serviços</h1>
+
+          <% listaServicos.forEach((servico, i) => {%>
+              <article id="servico-<%= i %>">
+                <div class="thumb">
+                  <img src="/images/servicos/<%=servico.imagem%>" />
+                </div>
+                <div class="info">
+                  <h3><%= servico.nome %></h3>
+                  <P><%= servico.valor %> </P>
+                  <p><%= servico.descricao %></p>
+                  <input type="hidden" value="<%= servico.id %>">
+                  <a href="#" class="btn btn-primary">agendar</a>
+                </div>
+              </article>
+            <% }) %>
+      
+        </div>
+      </section>
+    </main>
+
+<%- include("partials/footer") %>

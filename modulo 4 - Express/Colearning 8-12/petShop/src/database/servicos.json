@@ -1,0 +1,44 @@
+[
+    {
+        "id": 3,
+        "nome": "Corte de unhas",
+        "valor": "R$ 5,00",
+        "descricao": "Corte de unhas, todas as patas",
+        "imagem": "corte-unha.jpg"
+    },
+    {
+        "id": 4,
+        "nome": "Creche",
+        "valor": "R$ 50,00",
+        "descricao": "Cuidamos do seu pet",
+        "imagem": "corte-unha.jpg"
+    },
+    {
+        "id": 5,
+        "nome": "André",
+        "valor": "150",
+        "descricao": "asdasdasd",
+        "imagem": "banana"
+    },
+    {
+        "id": 6,
+        "nome": "blablabla",
+        "valor": "100",
+        "descricao": "asdasdasd",
+        "imagem": "banana"
+    },
+    {
+        "id": 7,
+        "nome": "teste",
+        "valor": "1 real",
+        "descricao": "descricao",
+        "imagem": "1670458786798.jpg"
+    },
+    {
+        "id": 8,
+        "nome": "André",
+        "valor": "150",
+        "descricao": "blablabla",
+        "imagem": "1670459013439.jpg"
+    }
+]
