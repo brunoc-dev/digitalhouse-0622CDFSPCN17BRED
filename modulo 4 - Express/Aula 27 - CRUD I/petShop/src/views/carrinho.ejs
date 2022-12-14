@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+<main>
+  <section class="carrinho-header">
+    <h3>Carrinho</h3>
+  </section>
+
+  <section class="container">
+    <% servicos.forEach(servico => { %>
+     <div class="row">
+      <div class="col">
+        <%= servico.nome %> 
+      </div>
+      <div class="col">
+        <%= servico.preco %>
+      </div>
+      <div class="col">
+        <button>Atualizar</button>
+        <form action="/carrinho/delete/<%= servico.id %>?_method=DELETE" method="post">
+          <button>Remover</button>
+        </form>
+      </div>
+     </div>
+    <% }) %>
+  </section>
+</main>
+<%- include('partials/footer') %> 

@@ -4,6 +4,10 @@ module.exports = {
     listaServicos: (req, res) => {
         const servicos = ServicoModel.index();
         //res.render('VIEW', {Objeto})
-        return res.render('servicos', {listaServicos: servicos, title: "Lista de Serviços"})
+        return res.render('servicos', {
+            listaServicos: servicos,
+            title: "Lista de Serviços",
+            css: ['style copy.css']
+        })
     }
 }

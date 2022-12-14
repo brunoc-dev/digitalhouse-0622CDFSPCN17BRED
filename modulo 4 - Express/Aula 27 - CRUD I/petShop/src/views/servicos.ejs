@@ -11,10 +11,13 @@
                   <img src="/images/servicos/<%=servico.imagem%>" />
                 </div>
                 <div class="info">
-                  <h3><%= servico.nome %></h3>
-                  <P><%= servico.valor %> </P>
-                  <p><%= servico.descricao %></p>
-                  <a href="#" class="btn btn-primary">agendar</a>
+                  <form action="/carrinho" method="post">
+                    <h3><%= servico.nome %></h3>
+                    <P><%= servico.valor %> </P>
+                    <p><%= servico.descricao %></p>
+                    <input type="hidden" name="servicoId" value="<%= servico.id %>">
+                    <button type="submit" class="btn btn-primary">agendar</button>
+                  </form>
                 </div>
               </article>
             <% } %>
