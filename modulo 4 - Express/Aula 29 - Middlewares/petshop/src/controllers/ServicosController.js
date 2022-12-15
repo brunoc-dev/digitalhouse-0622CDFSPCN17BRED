@@ -1,4 +1,5 @@
-const ServicoModel = require('../models/ServicoModel')
+const ServicoModel = require('../models/ServicoModel');
+const { validationResult } = require('express-validator');
 
 module.exports = {
   index: (req, res) => {
@@ -20,16 +21,37 @@ module.exports = {
       servico = ServicoModel.buscar(id);
     }
 
-    return res.render('cadastro-edicao', { servico });
+    return res.render('cadastro-edicao', { servico, errors: {} });
   },
 
   criar: (req, res) => {
+    let { errors } = validationResult(req);
+
+    if (errors.length) {
+      const errosFormatados = {};
+      errors.forEach(erro => errosFormatados[erro.param] = erro.msg);
+
+      return res.render('cadastro-edicao', { errors: errosFormatados, servico: null });
+    }
+
     ServicoModel.criar(req.body);
     return res.redirect('/servicos/admin');
   },
 
   atualizar: (req, res) => {
     const { id } = req.params;
+    let { errors } = validationResult(req);
+
+    if (errors.length) {
+      const errosFormatados = {};
+      errors.forEach(erro => errosFormatados[erro.param] = erro.msg);
+
+      return res.render('cadastro-edicao', {
+        errors: errosFormatados,
+        servico: { id, ...req.body }
+      });
+    }
+
     ServicoModel.atualizar(id, req.body);
     return res.redirect('/servicos/admin');
   },

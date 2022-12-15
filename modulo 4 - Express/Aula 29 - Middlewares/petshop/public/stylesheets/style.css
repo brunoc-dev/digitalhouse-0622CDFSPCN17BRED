@@ -336,3 +336,10 @@ section.cadastro-edicao form .field {
     display: flex;
     gap: 1rem;
 }
+
+p.erro {
+    min-height: 2rem;
+    font-style: italic;
+    color: red;
+    margin: 0.5rem;
+}

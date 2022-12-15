@@ -18,17 +18,19 @@
           <div class="field">
             <label for="nome">Nome do serviço</label>
             <input type="text" id="nome" name="nome" value="<% if (servico) { %><%= servico.nome %><% } %>">
+            <p class="erro"><%= errors.nome %></p>
           </div>
 
           <div class="field">
             <label for="valor">Preço</label>
             <input type="text" id="valor" name="valor" value="<% if (servico) { %><%= servico.valor %><% } %>">
+            <p class="erro"><%= errors.valor %></p>
           </div>
         </div>
   
         <label for="descricao">Descrição</label>
         <textarea id="descricao" name="descricao"><% if (servico) { %><%= servico.descricao %><% } %></textarea>
-
+        <p class="erro"><%= errors.descricao %></p>
         <button class="btn btn-primary" type="submit">Enviar</button>
       </form>
     </div>
