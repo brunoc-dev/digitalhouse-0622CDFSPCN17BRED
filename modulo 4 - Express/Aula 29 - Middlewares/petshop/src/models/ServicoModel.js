@@ -2,12 +2,11 @@ const { uuid } = require('uuidv4');
 const path = require('path');
 const fs = require('fs');
 
-const servicos = require('../database/servicos.json');
 const nomeArquivoServicos = path.join(__dirname, '../database/servicos.json');
 
 module.exports = {
   index () {
-    return servicos
+    return JSON.parse(fs.readFileSync(nomeArquivoServicos));
   },
 
   armazenar (servicos) {
@@ -17,12 +16,14 @@ module.exports = {
   criar ({ nome, valor, descricao }) {
     if (!nome || !valor || !descricao) return
 
+    const servicos = this.index();
+
     servicos.push({ id: uuid(), nome, valor, descricao });
     this.armazenar(servicos);
   },
 
   buscar (id) {
-    return servicos.find(servico => servico.id == id);
+    return this.index().find(servico => servico.id == id);
   },
 
   atualizar (id, { nome, valor, descricao }) {
@@ -30,11 +31,12 @@ module.exports = {
 
     if (!nome || !valor || !descricao) return
 
-    const servico = this.buscar(id);
+    const servicos = this.index();
+    const novoServico = servicos.find(servico => servico.id == id);
 
-    servico.nome = nome;
-    servico.valor = valor;
-    servico.descricao = descricao;
+    novoServico.nome = nome;
+    novoServico.valor = valor;
+    novoServico.descricao = descricao;
 
     this.armazenar(servicos);
   },
@@ -42,7 +44,10 @@ module.exports = {
   deletar (id) {
     if (!id) return
 
-   servicos = servicos.filter(servico => servico.id != id);
-   this.armazenar(servicos);
+    const servicos = this.index();
+    const novosServicos = servicos.filter(servico => servico.id != id);
+    // O passo abaixo remove imagens submetidas através do multer.
+    // fs.unlinkSync(path.join(__dirname, '../../public/' + servico.filename)).
+    this.armazenar(novosServicos);
   }
-}
+};

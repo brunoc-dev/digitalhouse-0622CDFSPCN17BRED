@@ -27,8 +27,9 @@
             <td><%= servico.valor %> </td>
             <td><%= servico.descricao %> </td>
             <td class="acoes">
-              <form action="#" method="POST">
-                <a href="/servicos/editar/<%= servico.id %>" class="btn">Editar</a>
+              <a href="/servicos/editar/<%= servico.id %>" class="btn">Editar</a>
+
+              <form action="/servicos/deletar/<%= servico.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-secondary">Deletar</button>
               </form>
             </td>
