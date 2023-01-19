@@ -12,15 +12,15 @@
       <% } %>
 
       <% if (user) { %>
-        <h1>Editar de serviço</h1>
+        <h1>Editar de usuário</h1>
       <% } else { %>
-        <h1>Cadastro de serviços</h1>
+        <h1>Cadastro de usuários</h1>
       <% } %>
 
       <% if (user) { %>
-        <form action="/users/editar/<%= user.id %>?_method=PUT" method="POST">
+        <form action="/usuarios/editar/<%= user.id %>?_method=PUT" method="POST">
       <% } else { %>
-        <form action="/users/cadastrar" method="POST">
+        <form action="/usuarios/cadastrar" method="POST">
       <% } %>
           <div class="field">
             <label for="nome">Nome</label>

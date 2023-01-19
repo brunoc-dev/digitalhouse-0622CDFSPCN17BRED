@@ -1,15 +1,16 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var methodOverride = require('method-override');
-var session = require('express-session');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const session = require('express-session');
 
-var indexRouter = require('./src/routes/index');
-var servicosRouter = require('./src/routes/servicos');
+const usuariosRouter = require('./src/routes/usuarios');
+const indexRouter = require('./src/routes/index');
+const servicosRouter = require('./src/routes/servicos');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/servicos', servicosRouter);
+app.use('/usuarios', usuariosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

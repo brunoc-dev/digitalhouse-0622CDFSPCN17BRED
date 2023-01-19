@@ -5,5 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', BaseController.index);
 
+router.get('/login', BaseController.loginForm);
+
 
 module.exports = router;
