@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<main>
+  <h2>Adicionar livro</h2>
+  <form class="add-form" action="/biblioteca" method="post">
+    <label for="titulo">Título</label>
+    <input type="text" name="titulo" id="titulo">
+
+    <label for="editora">Editora</label>
+    <input type="text" name="editora" id="editora">
+
+    <button type="submit">Enviar</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>

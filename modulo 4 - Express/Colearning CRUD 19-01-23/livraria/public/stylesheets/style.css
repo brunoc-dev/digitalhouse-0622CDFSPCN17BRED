@@ -1,0 +1,90 @@
+:root {
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+header {
+  height: 5rem;
+  background-color: #00B7FF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+header li {
+  list-style: none;
+}
+
+header li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+main .column-header {
+  display: flex;
+  height: 8rem;
+}
+
+main .column-header .column {
+  font-size: 1.5rem;
+  min-width: 25rem;
+  border: 0.1rem solid gray;
+  padding: 1rem;
+  margin: 0.2rem;
+  display: flex;
+  background-color: aliceblue;
+}
+
+main .body {
+  display: flex;
+  flex-direction: column;
+}
+
+main .body .row {
+  display: flex;
+}
+
+main .body .item {
+  font-size: 1.5rem;
+  width: 25rem;
+  border: 0.1rem solid gray;
+  padding: 1rem;
+  margin: 0.2rem;
+  display: flex;
+}
+
+main .add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+footer {
+  height: 5rem;
+  background-color: #00B7FF;
+}

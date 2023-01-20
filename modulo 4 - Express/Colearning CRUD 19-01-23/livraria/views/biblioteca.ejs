@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<main>
+  <div class="column-header">
+    <div class="column">
+      <h4>ID</h4>
+    </div>
+    <div class="column">
+      <h4>Título</h4>
+    </div>
+    <div class="column">
+      <h4>Editora</h4>
+    </div>
+    <div class="column">
+      <h4>Ações</h4>
+    </div>
+  </div>
+
+  <div class="body">
+    <% livros.forEach(livro => { %>
+      <div class="row">
+        <span class="item"><%= livro.id %></span>
+        <span class="item"><%= livro.titulo %></span>
+        <span class="item"><%= livro.editora %></span>
+        <span class="item">
+          <form action="/biblioteca/deletar/<%= livro.id %>?_method=DELETE" method="post">
+            <button type="submit">Deletar</button>
+          </form>
+        </span>
+      </div>
+    <% }) %>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
