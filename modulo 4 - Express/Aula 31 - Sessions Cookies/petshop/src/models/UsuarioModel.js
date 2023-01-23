@@ -14,6 +14,12 @@ module.exports = {
     return fs.writeFileSync(nomeArquivoUsuarios, JSON.stringify(usuarios, null, 4));
   },
 
+  buscar: function (email) {
+    const usuarios = this.listar();
+
+    return usuarios.find(usuario => usuario.email === email);
+  },
+
   criar: function (usuario) {
     const usuarios = this.listar();
 

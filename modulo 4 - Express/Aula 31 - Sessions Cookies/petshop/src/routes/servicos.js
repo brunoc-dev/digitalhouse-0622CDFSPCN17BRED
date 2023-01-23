@@ -2,21 +2,22 @@ const express = require('express');
 const router = express.Router();
 const ServicosController = require('../controllers/ServicosController');
 const validadorFormServicos = require('../middlewares/validadorFormServicos');
+const autenticado = require('../middlewares/autenticado');
 
 // C - Criação de novos serviços
-router.get('/cadastrar', ServicosController.editar);
-router.post('/cadastrar', validadorFormServicos, ServicosController.criar);
+router.get('/cadastrar', autenticado, ServicosController.editar);
+router.post('/cadastrar', autenticado, validadorFormServicos, ServicosController.criar);
 
 // R - Leitura de serviços
-router.get('/', ServicosController.index);
-router.get('/admin', ServicosController.admin);
+router.get('/', autenticado, ServicosController.index);
+router.get('/admin', autenticado, ServicosController.admin);
 
 // U - Atualização de serviços
-router.get('/editar/:id', ServicosController.editar);
-router.put('/editar/:id', validadorFormServicos, ServicosController.atualizar);
+router.get('/editar/:id', autenticado, ServicosController.editar);
+router.put('/editar/:id', autenticado, validadorFormServicos, ServicosController.atualizar);
 
 // D - Remoção de serviços
-router.delete('/deletar/:id', ServicosController.deletar);
+router.delete('/deletar/:id', autenticado, ServicosController.deletar);
 
 // 1 . Interação na view (botão, formulário, etc.)
 // 2 . Criar rota com o método http específico (EX: router.delete(...))
