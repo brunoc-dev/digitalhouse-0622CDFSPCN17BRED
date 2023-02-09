@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const LivrosController = require('../controllers/LivrosController');
+const AutoresController = require('../controllers/AutoresController');
 
 router.get('/', LivrosController.index);
 
@@ -11,5 +12,7 @@ router.post('/', LivrosController.criar);
 router.put('/editar/:id', LivrosController.editar);
 
 router.delete('/deletar/:id', LivrosController.deletar);
+
+router.get('/autores', AutoresController.index);
 
 module.exports = router;
