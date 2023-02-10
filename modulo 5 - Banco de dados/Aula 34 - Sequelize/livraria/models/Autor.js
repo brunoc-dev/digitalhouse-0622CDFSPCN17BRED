@@ -18,7 +18,7 @@ const criarAutorModel = (sequelize, dataTypes) => {
     timestamps: false
   };
 
-  const Autor = sequelize.define('Autor', colunas, opcoes)
+  const Autor = sequelize.define('Autor', colunas, opcoes);
 
   return Autor;
 };

@@ -102,6 +102,13 @@ main .body .item.actions button {
   font-weight: 600;
 }
 
+main .search-box {
+  width: 75.5rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
 footer {
   height: 5rem;
   background-color: #00B7FF;

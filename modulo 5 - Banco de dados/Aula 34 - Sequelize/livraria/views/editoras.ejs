@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<main>
+  <div class="search-box">
+    <form method="get">
+      <button type="submit">Search</button>
+      <input type="search" name="search" id="search">
+    </form>
+  </div>
+
+  <div class="column-header">
+    <div class="column">
+      <h4>ID</h4>
+    </div>
+    <div class="column">
+      <h4>Nome</h4>
+    </div>
+    <div class="column">
+      <h4>Ações</h4>
+    </div>
+  </div>
+
+  <div class="body">
+    <% editoras.forEach(editora => { %>
+      <div class="row">
+        <span class="item"><%= editora.id %></span>
+        <span class="item"><%= editora.nome %></span>
+        <span class="item actions">
+          <a href="/biblioteca/editoraes/form/<%= editora.id %>">Editar</a>
+          <form action="/biblioteca/editoras/deletar/<%= editora.id %>?_method=DELETE" method="post">
+            <button type="submit">Deletar</button>
+          </form>
+        </span>
+      </div>
+    <% }) %>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
