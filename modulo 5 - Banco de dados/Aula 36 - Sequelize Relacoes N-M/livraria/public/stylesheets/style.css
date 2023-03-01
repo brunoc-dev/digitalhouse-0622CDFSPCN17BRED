@@ -1,0 +1,129 @@
+:root {
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+header {
+  height: 5rem;
+  background-color: #00B7FF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+header li {
+  list-style: none;
+}
+
+header li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+main .column-header {
+  display: flex;
+  height: 8rem;
+}
+
+main .column-header .column {
+  font-size: 1.5rem;
+  min-width: 25rem;
+  border: 0.1rem solid gray;
+  padding: 1rem;
+  margin: 0.2rem;
+  display: flex;
+  background-color: aliceblue;
+}
+
+main .body {
+  display: flex;
+  flex-direction: column;
+}
+
+main .body .row {
+  display: flex;
+}
+
+main .body .item {
+  font-size: 1.5rem;
+  width: 25rem;
+  border: 0.1rem solid gray;
+  padding: 1rem;
+  margin: 0.2rem;
+  display: flex;
+}
+
+main .add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+main .add-button {
+  display: inline-block;
+  padding: 4px 15px;
+  margin-right: 1rem;
+  font-size: 10px;
+  text-decoration: none;
+  line-height: normal;
+  font-family: Arial;
+  border: 1px solid #555;
+  cursor: pointer;
+  color: #555;
+  font-weight: 600;
+}
+
+main .body .item.actions {
+  gap: 1rem;
+}
+
+main .body .item.actions a,
+main .body .item.actions button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 13.33px;
+  text-decoration: none;
+  line-height: normal;
+  font-family: Arial;
+  border: 1px solid #555;
+  cursor: pointer;
+  color: #555;
+  font-weight: 600;
+}
+
+main .search-box {
+  width: 75.5rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+footer {
+  height: 5rem;
+  background-color: #00B7FF;
+}

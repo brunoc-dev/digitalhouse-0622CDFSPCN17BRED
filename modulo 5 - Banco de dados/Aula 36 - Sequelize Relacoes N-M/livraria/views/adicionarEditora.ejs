@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<main>
+  <h2>
+    <% if (editora) { %>
+      Editar
+    <% } else { %>
+      Adicionar
+    <% } %>
+     Editora
+  </h2>
+
+  <% if (editora) { %>
+    <form class="add-form" action="/editoras/<%= editora.id %>?_method=PUT" method="post">
+  <% } else { %>
+    <form class="add-form" action="/editoras" method="post">
+  <% } %>
+
+    <label for="nome">Editora</label>
+    <input type="text" name="nome" id="nome" value="<%= editora && editora.nome %>">
+
+    <button type="submit">Enviar</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>
