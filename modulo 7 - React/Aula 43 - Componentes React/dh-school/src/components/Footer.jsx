@@ -1,4 +1,5 @@
-export function Footer() {
+// Componente Stateless !!!!!
+export default function Footer() {
   return (
     <footer className="sticky-footer bg-white">
       <div className="container my-auto">

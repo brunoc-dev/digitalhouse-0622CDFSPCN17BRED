@@ -1,6 +1,6 @@
 import jordanWalke from '../assets/images/jordan-walke.png'
 
-export function TopBar() {
+export default function TopBar() {
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
