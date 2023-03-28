@@ -1,14 +1,52 @@
+import { useEffect, useState } from 'react';
 import mandalorian from '../assets/images/mandalorian.jpg'
 import { ContentRowMovies } from './ContentRowMovies';
 
-function ContentRowTop(){
-  const getData = () => [
-    {id: 1, color: "primary", title: "Movies in database", quantity: "21"},
-    {id: 2, color: "success", title: "Total awards", quantity: "80"},
-    {id: 3, color: "warning", title: "Actors quantity", quantity: "49"}
-  ];
+function ContentRowTop() {
+  const getActorsQuantity = () => {
+    fetch('http://127.0.0.1:3001/api/actors', {
+      method: 'get',
+    }).then(response => response.json())
+      .then(data => {
+        const newActors = {color: "warning", title: "Actors quantity", quantity: data.meta.total}
+        setActors(newActors);
+      } )
+      .catch(erro => console.log(erro))
+    }
 
-  const database = getData();
+    const getMoviesQuantity = () => {
+      fetch('http://127.0.0.1:3001/api/movies', {
+        method: 'get',
+      }).then(response => response.json())
+        .then(data => {
+          const newMovies = {color: "primary", title: "Movies in database", quantity: data.meta.total}
+          setMovies(newMovies);
+        } )
+        .catch(erro => console.log(erro))
+      }
+
+    const getAwardsQuantity = () => {
+      fetch('http://127.0.0.1:3001/api/movies', {
+        method: 'get',
+      }).then(response => response.json())
+        .then(data => {
+          let totalAwards = 0;
+          data.data.forEach(movie => totalAwards += movie.awards)
+          const newAwards = {color: "success", title: "Total awards", quantity: totalAwards}
+          setAwards(newAwards);
+        } )
+        .catch(erro => console.log(erro))
+      }
+
+  const [movies, setMovies] = useState({color: "primary", title: "Movies in database", quantity: 0})
+  const [awards, setAwards] = useState({color: "success", title: "Total awards", quantity: 0})
+  const [actors, setActors] = useState({color: "warning", title: "Actors quantity", quantity: 0})
+
+  useEffect(() => {
+    getActorsQuantity();
+    getMoviesQuantity();
+    getAwardsQuantity();
+  }, []);
 
   return(
     <div className="container-fluid">
@@ -18,15 +56,26 @@ function ContentRowTop(){
 
     {/* <!-- Content Row Movies--> */}
     <div className="row">
+      <button onClick={() => setActors({...actors, quantity: actors.quantity + 1})}>ADD ACTOR</button>
       {/* <!-- Movies in Data Base --> */}
-      { database.map(row =>
         <ContentRowMovies
-          color={row.color}
-          title={row.title}
-          quantity={row.quantity}
-          key={row.id}
+          color={movies.color}
+          title={movies.title}
+          quantity={movies.quantity}
+          key={1}
         />
-      )}
+        <ContentRowMovies
+          color={actors.color}
+          title={actors.title}
+          quantity={actors.quantity}
+          key={2}
+        />
+        <ContentRowMovies
+          color={awards.color}
+          title={awards.title}
+          quantity={awards.quantity}
+          key={3}
+        />
     </div>
     {/* <!-- End movies in Data Base --> */}
 
