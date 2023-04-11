@@ -15,6 +15,7 @@ const apiMoviesRouter = require('./routes/api/movies')
 const apiGenresRouter = require('./routes/api/genres')
 //Aquí llamo a la ruta de las api de actors
 const apiActorsRouter = require('./routes/api/actors')
+const apiAwardsRouter = require('./routes/api/awards')
 
 
 app.use(cors({
@@ -40,6 +41,7 @@ app.use(genresRoutes);
 app.use('/api/movies',apiMoviesRouter);
 app.use('/api/actors',apiActorsRouter);
 app.use('/api/genres',apiGenresRouter);
+app.use('/api/awards',apiAwardsRouter);
 
 
 //Activando el servidor desde express
