@@ -1,0 +1,26 @@
+.TodoList {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-width: 20rem;
+}
+
+.TodoList > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.TodoList > header > input {
+  min-height: 2rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.EmptyTasks {
+  color: aliceblue;
+  font-size: .8rem;
+  width: 100%;
+  text-align: center;
+}

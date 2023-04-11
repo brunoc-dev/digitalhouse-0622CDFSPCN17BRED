@@ -1,0 +1,30 @@
+.App {
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+button {
+  border-radius: .5rem;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.5);
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button.success {
+  background-color: green;
+  color: aliceblue;
+}
+
+button.danger {
+  background-color: darkred;
+  color: aliceblue;
+}
